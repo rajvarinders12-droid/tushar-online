@@ -1201,18 +1201,27 @@ body {
     .short-preview {
         flex: 0 0 75%;
         width: 75%;
-        height: calc((75vw - 30px) * 1.777);
-        /* 9:16 math */
-        /* On mobile let it occupy mostly screen width */
+        height: auto;
+    }
+
+    .short-preview::before {
+        content: "";
+        display: block;
+        padding-bottom: 177.77%;
     }
 
     .long-preview {
         flex: 0 0 100%;
         scroll-snap-align: center;
-        height: calc((100vw - 40px) * 0.5625);
-        /* 16:9 math to stop safari flex height collapse */
+        height: auto;
         width: 100%;
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .long-preview::before {
+        content: "";
+        display: block;
+        padding-bottom: 56.25%;
     }
 
     .iframe-click-shield {

@@ -1108,6 +1108,11 @@ body {
     .category-subtitle {
         font-size: 1rem;
     }
+
+    .carousel-arrow {
+        top: calc(50% - 30px);
+        /* Account for mobile swipe indicator height */
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1187,12 +1192,17 @@ body {
     .short-preview {
         flex: 0 0 75%;
         width: 75%;
+        height: calc((75vw - 30px) * 1.777);
+        /* 9:16 math */
         /* On mobile let it occupy mostly screen width */
     }
 
     .long-preview {
         flex: 0 0 100%;
         scroll-snap-align: center;
+        height: calc((100vw - 40px) * 0.5625);
+        /* 16:9 math to stop safari flex height collapse */
+        width: 100%;
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 

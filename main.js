@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (closestPreview) {
                 closestPreview.classList.add('active-center');
-            }
+             }
         };
 
         longGrid.addEventListener('scroll', updateCoverflow);

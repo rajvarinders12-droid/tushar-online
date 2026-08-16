@@ -1250,7 +1250,7 @@ body {
     overflow: hidden;
 }
 
-.progress-fill {
+ .progress-fill {
     height: 100%;
     width: 0%;
     /* Default width before JS kicks in */

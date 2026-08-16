@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-            }
+             }
         });
     });
 

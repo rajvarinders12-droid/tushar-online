@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-             }
+            }
         });
     });
 
@@ -37,6 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (videoEl && videoEl.tagName === 'VIDEO') {
                     const src = videoEl.getAttribute('data-src') || videoEl.getAttribute('src');
                     if (src) {
+                        // Pause all background videos instantly to prevent audio/data clash
+                        document.querySelectorAll('.video-container video').forEach(v => {
+                            if (v !== videoEl && !v.paused) v.pause();
+                        });
+
                         modalVideo.src = src;
                         videoModal.classList.add('active');
                         modalVideo.play().catch(e => console.log('play prevented', e));
